@@ -9,7 +9,8 @@ const Header = () => {
                     <Link to="/" className="brand-logo">Brand Shop</Link>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li><Link to="/men">Men</Link></li>
-                        <li><Link to="/woman">Woman</Link></li>
+                        <li><Link to="/women">Woman</Link></li>
+                        <li><Link to="/child">Child</Link></li>
                         <li><Link to="/card">Cart</Link></li>
                     </ul>
                 </div>

@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Men = () => {
+const Women = () => {
     return (
         <div>
-            MEN
+            Women
+
         </div>
     );
 };
 
-export default Men;
+export default Women;
