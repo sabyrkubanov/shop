@@ -2,9 +2,9 @@ import React, {useEffect, useState} from "react";
 import {Routes,Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
-import Card from "./components/Card/Card";
+import Cart from "./components/Cart/Cart";
 import NotFound from "./components/NotFound/NotFound";
-import './style.scss'
+import './style/style.scss'
 import axios from "axios";
 import Men from "./components/Men/Men";
 import Child from "./components/Child/Child";
@@ -21,14 +21,14 @@ function App() {
             .catch((err) => console.log('ERROR'))
     },[])
   return (
-    <section className="app">
+    <section className="App">
           <Header/>
           <Routes>
               <Route path='/' element={<Home shoes={shoes} />}/>
-              <Route path='/men' element={<Men/>}/>
-              <Route path='/women' element={<Women/>}/>
-              <Route path='/child' element={<Child/>}/>
-              <Route path='/card' element={<Card/>}/>
+              <Route path='/men' element={<Men shoes={shoes}/>}/>
+              <Route path='/women' element={<Women shoes={shoes}/> }/>
+              <Route path='/child' element={<Child shoes={shoes}/>}/>
+              <Route path='/card' element={<Cart/>}/>
               <Route path='*' element={<NotFound/>}/>
           </Routes>
 

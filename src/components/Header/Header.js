@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {NavLink,Link} from "react-router-dom";
 
 const Header = () => {
     return (
@@ -8,10 +8,10 @@ const Header = () => {
                 <div className="nav-wrapper">
                     <Link to="/" className="brand-logo">Brand Shop</Link>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
-                        <li><Link to="/men">Men</Link></li>
-                        <li><Link to="/women">Woman</Link></li>
-                        <li><Link to="/child">Child</Link></li>
-                        <li><Link to="/card">Cart</Link></li>
+                        <li className='header__link'><NavLink to="/men">Men</NavLink></li>
+                        <li className='header__link'><NavLink to="/women">Woman</NavLink></li>
+                        <li className='header__link'><NavLink to="/child">Child</NavLink></li>
+                        <li className='header__link'><NavLink to="/card">Cart</NavLink></li>
                     </ul>
                 </div>
             </nav>
