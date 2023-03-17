@@ -1,13 +1,33 @@
 import React from 'react';
-import {useNavigate} from "react-router-dom";
 
-const Cart = () => {
-    let history = useNavigate()
-    history('/goBack')
-    console.log(history)
+const Cart = ({cart,setCart}) => {
+
     return (
-        <div>
-            Здесь будеть ваше обявление
+        <div className='container'>
+
+
+            <table className='centered'>
+                <thead>
+                <tr>
+                    <th>Shoes Name</th>
+                    <th>Shoes Name</th>
+                    <th>Shoes Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                {cart.map((item,idx) => {
+                    return (
+                        <tr key={item.id}>
+                            <td>{item.shoe[0].shoe}</td>
+                            <td>{item.count}</td>
+                            <td>{item.shoe[0].retailPrice} $</td>
+
+                        </tr>
+                    )
+                })}
+                </tbody>
+
+            </table>
 
         </div>
     );

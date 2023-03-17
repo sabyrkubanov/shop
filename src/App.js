@@ -12,6 +12,8 @@ import Women from "./components/Women/Women";
 
 function App() {
     const[shoes, setShoes] = useState([])
+    const[cart, setCart] = useState([])
+
     useEffect(() => {
         axios('https://v1-sneakers.p.rapidapi.com/v1/sneakers',
             {params: {limit: '50'}, headers: {
@@ -20,15 +22,17 @@ function App() {
             .then(({data}) => setShoes(data.results))
             .catch((err) => console.log('ERROR'))
     },[])
+
   return (
+
     <section className="App">
           <Header/>
           <Routes>
-              <Route path='/' element={<Home shoes={shoes} />}/>
-              <Route path='/men' element={<Men shoes={shoes}/>}/>
-              <Route path='/women' element={<Women shoes={shoes}/> }/>
-              <Route path='/child' element={<Child shoes={shoes}/>}/>
-              <Route path='/card' element={<Cart/>}/>
+              <Route path='/' element={<Home cart={cart} setCart={setCart} shoes={shoes} />}/>
+              <Route path='/men' element={<Men cart={cart} setCart={setCart} shoes={shoes}/>}/>
+              <Route path='/women' element={<Women cart={cart} setCart={setCart} shoes={shoes}/> }/>
+              <Route path='/child' element={<Child cart={cart} setCart={setCart} shoes={shoes}/>}/>
+              <Route path='/card' element={<Cart cart={cart} setCart={setCart}/>}/>
               <Route path='*' element={<NotFound/>}/>
           </Routes>
 
