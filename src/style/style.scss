@@ -59,3 +59,37 @@
   border-radius: 5px;
   background-color: red;
 }
+.cart__buttons-row {
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+}
+.cart__buttons-row button {
+  padding: 3px 7px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.cart__button-plus {
+  background-color: gray;
+  color: white;
+}
+
+.cart__foot {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+  align-items: center;
+}
+.cart__pay {
+  cursor: pointer;
+}
+.card__search {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  right: 20px;
+}
+.card__input {
+  position: relative;
+}

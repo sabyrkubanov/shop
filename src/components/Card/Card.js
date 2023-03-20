@@ -2,19 +2,16 @@ import React from 'react';
 import notImage from "../../assets/notimg.png";
 
 const Card = ({shoes,cart,setCart}) => {
+
+
     const addCart = (id) => {
-        const find = cart.findIndex((item) => item.id.shoe[0].id === id)
+        const find = cart.findIndex((item) => item.shoe[0].id === id)
 
 
         if (find >= 0) {
-            // setCart(cart.map((item) => {
-            //     if (item.shoe[0].id === id) {
-            //         return {...item, count: item.count + 1}
-            //     } else {
-            //         return item
-            //     }
-            // }))
-            cart[find] = cart[find].count + 1
+
+            cart[find].count++
+            setCart([...cart])
         } else {
             setCart([...cart, {
                 shoe: shoes.filter(item => item.id === id),
@@ -27,9 +24,16 @@ const Card = ({shoes,cart,setCart}) => {
         <section className='home'>
             <div className="container">
                 <div className="row">
-                    {shoes.map((item,idx) => {
+                <div className="input-field col s12 card__input">
+                    <input type="search" id='search' className="validate"/>
+                    <label htmlFor="search">Search</label>
+
+                </div>
+                </div>
+                <div className="row">
+                    {shoes.map((item) => {
                         return(
-                            <div className="col s12 m4"key={item.id}>
+                            <div className="col s12 m4" key={item.id}>
                                 <div className="card">
                                     <div className="card-image">
                                         <img className='home__card-image' src={item.media.thumbUrl === null ? notImage : item.media.thumbUrl} alt='img'/>

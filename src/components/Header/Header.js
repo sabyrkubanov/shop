@@ -11,7 +11,7 @@ const Header = () => {
                         <li className='header__link'><NavLink to="/men">Men</NavLink></li>
                         <li className='header__link'><NavLink to="/women">Woman</NavLink></li>
                         <li className='header__link'><NavLink to="/child">Child</NavLink></li>
-                        <li className='header__link'><NavLink to="/card">Cart</NavLink></li>
+                        <li className='header__link'><NavLink to="/cart">Cart</NavLink></li>
                     </ul>
                 </div>
             </nav>

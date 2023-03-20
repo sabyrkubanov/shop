@@ -32,7 +32,7 @@ function App() {
               <Route path='/men' element={<Men cart={cart} setCart={setCart} shoes={shoes}/>}/>
               <Route path='/women' element={<Women cart={cart} setCart={setCart} shoes={shoes}/> }/>
               <Route path='/child' element={<Child cart={cart} setCart={setCart} shoes={shoes}/>}/>
-              <Route path='/card' element={<Cart cart={cart} setCart={setCart}/>}/>
+              <Route path='/cart' element={<Cart cart={cart} setCart={setCart}/>}/>
               <Route path='*' element={<NotFound/>}/>
           </Routes>
 
