@@ -1,11 +1,11 @@
 import React from 'react';
 import Card from "../Card/Card";
 
-const Home = ({shoes,cart,setCart}) => {
+const Home = ({shoes}) => {
 
         return (
             <div>
-                <Card shoes={shoes} cart={cart} setCart={setCart} />
+                <Card shoes={shoes}  />
 
             </div>
 

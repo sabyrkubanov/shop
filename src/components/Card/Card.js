@@ -1,24 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import notImage from "../../assets/notimg.png";
+import {CustomContext} from "../../Context";
 
-const Card = ({shoes,cart,setCart}) => {
-
-
-    const addCart = (id) => {
-        const find = cart.findIndex((item) => item.shoe[0].id === id)
-
-
-        if (find >= 0) {
-
-            cart[find].count++
-            setCart([...cart])
-        } else {
-            setCart([...cart, {
-                shoe: shoes.filter(item => item.id === id),
-                count: 1,
-            }])
-        }
-    }
+const Card = ({shoes}) => {
+    const {addCart} = useContext(CustomContext)
 
     return (
         <section className='home'>
@@ -27,6 +12,10 @@ const Card = ({shoes,cart,setCart}) => {
                 <div className="input-field col s12 card__input">
                     <input type="search" id='search' className="validate"/>
                     <label htmlFor="search">Search</label>
+                    <div className="card__search">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </div>
+
 
                 </div>
                 </div>
@@ -47,7 +36,7 @@ const Card = ({shoes,cart,setCart}) => {
                                     </div>
                                     <div className="card-action">
                                         <a href="#">Learn more</a>
-                                        <button className='card__btn' type='button' onClick={() => addCart(item.id)}>Buy</button>
+                                        <button className='card__btn' type='button' onClick={() => addCart(item.id ,shoes)}>Buy</button>
                                     </div>
                                 </div>
                             </div >

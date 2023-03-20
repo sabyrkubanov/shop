@@ -6,11 +6,23 @@
 .header__link > a.active {
   color: red!important;
 }
+.header__link a {
+  position: relative;
+}
+.header__link span {
+  position: absolute;
+  top: -18px;
+  right: 30px;
+  font-size: 14px;
+}
 
 .nav-wrapper {
   padding: 0 15px;
 }
+#nav-mobile {
+  margin-right: 11px;
 
+}
 
 .home {
   padding: 50px 0 50px;
@@ -86,9 +98,12 @@
 }
 .card__search {
   position: absolute;
-  top: 50%;
+  top: 60%;
   transform: translate(-50%, -50%);
   right: 20px;
+}
+.card__search ion-icon {
+  font-size: 20px;
 }
 .card__input {
   position: relative;
