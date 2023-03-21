@@ -1,10 +1,10 @@
 import React from 'react';
 import Card from "../Card/Card";
 
-const Men = ({shoes}) => {
+const Men = ({shoes,setShoes}) => {
     return (
 
-    <Card  shoes={shoes.filter((item) => item.gender === 'men' || item.gender === 'unisex')}/>
+    <Card  setShoes={setShoes} shoes={shoes.filter((item) => item.gender === 'men' || item.gender === 'unisex')}/>
 
 )
 
